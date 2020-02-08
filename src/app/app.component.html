@@ -1,0 +1,142 @@
+<div class="container"> 
+  <br>
+  <h1>Pipes</h1>
+
+  <table class="table">
+
+    <thead class="thead-dark">
+      <tr>
+        <th>Variable</th>
+        <th>Pipe</th>
+        <th>Producto</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>  
+        <td>{{nombre}} </td>
+        <td>Uppercase</td>
+        <td>{{nombre | uppercase}}</td>      
+      </tr>
+
+      
+      <tr>  
+        <td>{{nombre}} </td>
+        <td>Lowercase</td>
+        <td>{{nombre | lowercase}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{nombre}} </td>
+        <td>Slice:3</td>
+        <td>{{nombre | slice:3}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{nombre}} </td>
+        <td>Slice 0:3</td>
+        <td>{{nombre | slice:0:3}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{numbers}} </td>
+        <td>slice:1:5</td>
+        <td>{{numbers | slice:1:5}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{pi}} </td>
+        <td>number:'3.-0-0'</td>
+        <td>{{pi | number:'3.0-0'}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{pi}} </td>
+        <td>number:'1.-0-2'</td>
+        <td>{{pi | number:'1.0-2'}}</td>      
+      </tr>   
+
+      <tr>  
+        <td>{{a}} </td>
+        <td>percent</td>
+        <td>{{a | percent}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{a}} </td>
+        <td>percent:'2.2-2'</td>
+        <td>{{a | percent:'2.2-2'}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{salary}} </td>
+        <td>currency:'EUR'</td>
+        <td>{{salary | currency:'EUR'}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{salary}} </td>
+        <td>currency:'EUR':'code'</td>
+        <td>{{salary | currency:'EUR':'code'}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{salary}} </td>
+        <td>currency:'EUR':'code':'4.1-1'</td>
+        <td>{{salary | currency:'EUR':'code':'4.1-1'}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{promiseValue}} </td>
+        <td>async</td>
+        <td>{{promiseValue | async}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{currentDate}} </td>
+        <td>date</td>
+        <td>{{currentDate | date:'dd MMMM yyyy'}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{secondName}} </td>
+        <td>capi</td>
+        <td>{{secondName | capitalized}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{secondName}} </td>
+        <td>capi:false</td>
+        <td>{{secondName | capitalized:false}}</td>      
+      </tr>
+
+      <tr>  
+        <td>{{password}} </td>
+        <td>
+          <button class="btn btn-outline-primary" (click)="isShown=!isShown">Hide</button>
+        </td>
+        <td>{{password | hide:isShown}}</td>      
+      </tr>
+
+  </table>
+
+  <h4>Slice</h4>
+
+  <ul>  
+    <li *ngFor="let number of numbers | slice:5:20">{{number}}</li>
+  </ul>
+
+  <h4>JSON</h4>
+  <pre> 
+    {{heroe | json}}
+  </pre>
+
+  <iframe width="560" height="315" 
+  [src]="youtubeUrl | secureDom" 
+  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <br>
+  <br>
+
+</div>
